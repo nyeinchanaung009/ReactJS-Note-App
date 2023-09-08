@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+    :root{
+        --accent : #063c65;
+        --accent2 : #063c65;
+        
+        /* --bg : #d9dee6; */
+        --bg : #e6eaf0;
+        --dark1 : #eff4f6;
+        --dark2 : #ffffff;
+        --dark3 : #e5e9f1 ;
+        --grey : #7b8b9e;
+        
+        --bordercolor : #5a5a5a4d;
+        --bordercolor2 : #25252558;
+
+        --normaltext : #162161;
+        --secondarytext : #3f4569;
+
+        --font-poppins : 'Poppins', sans-serif;
+        --font-montserrat : 'Montserrat', sans-serif;
+        --font-anton : 'Anton', sans-serif;
+    }
+    
+    #app.darkMode{
+        --accent : #ffaf19;
+        --accent2 : #ffaa34;
+
+        --bg : #1d1d1d;
+        /* --bg : #1d1d21; */
+
+        --dark1 : #363636;
+        --dark2 : #303030;
+        /* --dark2 : #2e2e32 ; */
+        --dark3: #1d1d1d;
+        --grey : #6c757d;
+
+        --bordercolor : #87878728;
+        --bordercolor2 : #6464645c;
+        
+        --normaltext : #ededed;
+        --secondarytext : #aeb0b3;
+    }
+
+    .navlink-accent{
+        animation:slideright 0.35s ease-out forwards;
+    }
+
+    .navlink.active{
+        background: var(--accent) !important;
+        color : #ffffff !important;
+    }
+
+    .navlink.active + .navlink-accent{
+        display: block !important;
+    }
+
+    @keyframes slideright {
+        from{
+            opacity: 0;
+            transform: translateX(-5px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(5px);
+        }
+    }
+
+    #toast{
+        animation:fadein 0.3s ease-out forwards;
+    }
+
+    @keyframes fadein {
+        from{
+            opacity: 0;
+            transform: translateX(35px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @media only screen  and (min-width:768px){
+        @keyframes slideright {
+            from{
+                opacity: 0;
+                transform: translateX(-5px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(12px);
+            }
+        }
+    }
+}
